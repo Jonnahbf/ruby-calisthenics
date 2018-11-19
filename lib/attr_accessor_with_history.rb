@@ -5,7 +5,17 @@ class Class
     attr_reader attr_name+"_history" # create bar_history getter
     class_eval %Q{
       attr_accessor :attr_name
-      
     }
+    def foo
+      return attr_name
+    end
+
+    #setter method
+  	def foo=(newname)
+  		attr_name = newname
+  	end
   end
+
+
+
 end
