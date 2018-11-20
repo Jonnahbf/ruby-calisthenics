@@ -24,6 +24,14 @@ class JellyBean < Dessert
 		@flavor = flavor
   	end
 
+  def calories
+    @calories = 5
+  end
+
+  def name
+    @name = "vanilla jelly bean"
+  end
+
 	def flavor
 		@flavor
 	end

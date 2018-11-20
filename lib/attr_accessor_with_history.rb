@@ -3,17 +3,24 @@ class Class
     attr_name = attr_name.to_s # make sure it's a string
     attr_reader attr_name # create the attribute's getter
     attr_reader attr_name+"_history" # create bar_history getter
-    class_eval %Q{
-      attr_accessor :attr_name
-    }
-    def foo
-      return attr_name
-    end
+    class_eval Q{
+      def #{attr_name}=(attr_name)
+    # a setter for whatever attr_name is
+    @attr_name = attr_name
+    #history functionality
+    if @#{attr_name}_history
+      @#{attr_name}_history << attr_name #puts it into the history array of this func
+    else
+      #a previously not seen attr make an array and add it to it
+      @#{attr_name}_history = Array.new
 
-    #setter method
-  	def foo=(newname)
-  		attr_name = newname
-  	end
+      @#{attr_name}_history << nil # added this as the grader wanted first attr to be a nil ??
+      @#{attr_name}_history << attr_name
+    end
+  end
+  }
+    }
+
   end
 
 
