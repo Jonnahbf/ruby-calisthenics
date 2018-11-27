@@ -31,6 +31,12 @@ class RockPaperScissors
   end
 
   def self.tournament_winner(tournament)
-  
+    if self.tournament_winner[0][1].class==String
+		rps_game_winner(self.tournament_winner)
+	else
+		round1 = self.tournament_winner(self.tournament_winner[0])
+		round2 = self.tournament_winner(self.tournament_winner[1])
+		self.tournament_winner([round1,round2])
+end
   end
 end

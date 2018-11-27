@@ -30,7 +30,7 @@ describe RockPaperScissors  do
     it 'recursive case [30 points]' do
       tourney = [
         [
-          [ ["Armando", "P"], ["Dave", "S"] ],
+          [ ["Armando", "P"], ["Dave", "S"] ], 
           [ ["Richard", "R"], ["Michael", "S"] ]
         ],
         [
